@@ -16,9 +16,7 @@ function getExtensions() {
   request.path = '/posts';
   http.get(request, (res) => {
     if (res.err) {
-      console.error('res.err');
     } else {
-      console.log(res);
     }
   });
 }
@@ -27,9 +25,7 @@ function getTemplates() {
   request.path = '/templates';
   http.get(request, (res) => {
     if (res.err) {
-      console.error('res.err');
     } else {
-      console.log(res);
     }
   });
 }
