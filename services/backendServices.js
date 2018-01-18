@@ -1,1 +1,1 @@
-console.log('Tu m\'énerves !');
+console.log('TG !');
