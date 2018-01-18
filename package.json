@@ -1,5 +1,5 @@
 {
-  "name": "read-me",
+  "name": "readmegenerate",
   "version": "0.0.1",
   "description": "JavaScript module which create useful README files for your project",
   "main": "index.js",
@@ -15,6 +15,7 @@
     "JavaScript",
     "module"
   ],
+  "author": "Alvin Berthelot",
   "contributors": [
     "Alex Soudant",
     "Alvin Berthelot (http://alvin.berthelot.rocks)"
