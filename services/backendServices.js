@@ -1,1 +1,17 @@
-console.log('TG !');
+function getExtensions(){
+  
+}
+
+function getTemplates(){
+  
+}
+
+function generate(ext, template){
+  
+}
+
+module.exports = {
+  getExtensions : getExtensions,
+  getTemplates : getTemplates,
+  generate : generate
+};
