@@ -1,17 +1,19 @@
-function getExtensions(){
-  
+let config = require('./../config/config');
+
+function getExtensions() {
+
 }
 
-function getTemplates(){
-  
+function getTemplates() {
+
 }
 
-function generate(ext, template){
-  
+function generate(ext, template) {
+
 }
 
 module.exports = {
-  getExtensions : getExtensions,
-  getTemplates : getTemplates,
-  generate : generate
+  getExtensions: getExtensions,
+  getTemplates: getTemplates,
+  generate: generate
 };
