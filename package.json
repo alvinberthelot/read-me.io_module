@@ -1,0 +1,24 @@
+{
+  "name": "read-me-module.io",
+  "version": "0.0.1",
+  "description": "generate README files into your projects ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexSoudant/read-me.io_module.git"
+  },
+  "keywords": [
+    "README",
+    "javascript",
+    "module"
+  ],
+  "author": "Alex Soudant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexSoudant/read-me.io_module/issues"
+  },
+  "homepage": "https://github.com/AlexSoudant/read-me.io_module#readme"
+}
