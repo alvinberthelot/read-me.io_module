@@ -1,58 +1,74 @@
-const http = require('http');
+const https = require('https');
 const config = require('./../config/config');
 
-let request = {
+let options = {
   hostname: config.api.url,
   port: config.api.port,
   path: '/',
-  agent: false  // create a new agent just for this one request
+  method: 'GET',
+  agent: false,
+  family: 4
 };
+//  port: config.api.port,
+//TODO : use options object
+
+function getApi(path) {
+  // options.path = path;
+
+  return new Promise(function (resolve, reject) {
+
+    https.get(config.api.url + path, res => {
+      res.setEncoding('utf8');
+
+      let body = '';
+
+      res.on('data', data => {
+        body += data;
+      });
+
+      res.on('end', () => {
+        resolve(JSON.parse(body));
+      });
+
+      res.on('error', err => reject(err));
+
+    });
+
+  });
+}
 
 function getHealth() {
 
 }
 
 function getExtensions() {
-  request.path = '/posts';
-  http.get(request, (res) => {
-    if (res.err) {
-      console.error('res.err');
-    } else {
-      console.log(res);
-    }
+  return new Promise(function (resolve, reject) {
+    getApi('/posts/1').then(r => {
+      resolve(r.title.split(' '));
+    }).catch(e => {
+      reject(e);
+    });
   });
 }
 
 function getTemplates() {
-  request.path = '/templates';
-  http.get(request, (res) => {
-    if (res.err) {
-      console.error('res.err');
-    } else {
-      console.log(res);
-    }
-  });
-}
-
-function getExtensions2() {
   return new Promise(function (resolve, reject) {
-    resolve(['txt', 'json']);
+    getApi('/posts/2').then(r => {
+      resolve(r.title.split(' '));
+    }).catch(e => {
+      reject(e);
+    });
   });
 }
 
-function getTemplates2() {
-  return new Promise(function (resolve, reject) {
-    resolve(['java', 'js', 'node']);
-  });
-}
 
-function generate(ext, template) {
+// function generate(ext, template) {
 
-}
+// }
 
 module.exports = {
-  getExtensions: getExtensions2,
-  getTemplates: getTemplates2,
-  generate: generate,
+  getExtensions: getExtensions,
+  getTemplates: getTemplates,
+  //generate: generate,
   getHealth: getHealth
 };

@@ -1,9 +1,9 @@
 
 let config = {
   api: {
-    url: 'https://jsonplaceholder.typicode.com/',
+    url: 'https://jsonplaceholder.typicode.com',
     key: 'n/a',
-    port: '80'
+    port: 80
   }
 };
 
