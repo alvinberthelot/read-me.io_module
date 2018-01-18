@@ -34,13 +34,25 @@ function getTemplates() {
   });
 }
 
+function getExtensions2() {
+  return new Promise(function (resolve, reject) {
+    resolve(['txt', 'json']);
+  });
+}
+
+function getTemplates2() {
+  return new Promise(function (resolve, reject) {
+    resolve(['java', 'js', 'node']);
+  });
+}
+
 function generate(ext, template) {
 
 }
 
 module.exports = {
-  getExtensions: getExtensions,
-  getTemplates: getTemplates,
+  getExtensions: getExtensions2,
+  getTemplates: getTemplates2,
   generate: generate,
   getHealth: getHealth
 };
