@@ -1,14 +1,14 @@
 const https = require('https');
 const config = require('./../config/config');
 
-let options = {
-  hostname: config.api.url,
-  port: config.api.port,
-  path: '/',
-  method: 'GET',
-  agent: false,
-  family: 4
-};
+// let options = {
+//   hostname: config.api.url,
+//   port: config.api.port,
+//   path: '/',
+//   method: 'GET',
+//   agent: false,
+//   family: 4
+// };
 //  port: config.api.port,
 //TODO : use options object
 
