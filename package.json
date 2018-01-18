@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/alvinberthelot/read-me.io_module#readme",
   "dependencies": {
-    "commander": "^2.13.0",
-    "inquirer": "^5.0.0"
+    "commander": "2.13.0",
+    "inquirer": "5.0.0"
   }
 }
