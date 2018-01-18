@@ -3,3 +3,4 @@ node_modules/
 
 #visual studio code
 .vscode
+.DS_Store
