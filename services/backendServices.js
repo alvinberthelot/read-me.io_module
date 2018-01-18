@@ -13,7 +13,7 @@ function getHealth() {
 }
 
 function getExtensions() {
-  request.path = '/extensions';
+  request.path = '/posts';
   http.get(request, (res) => {
     if (res.err) {
       console.error('res.err');
