@@ -1,0 +1,32 @@
+{
+  "name": "readmegenerate",
+  "version": "0.0.1",
+  "description": "JavaScript module which create useful README files for your project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvinberthelot/read-me.io_module.git"
+  },
+  "keywords": [
+    "README",
+    "JavaScript",
+    "module"
+  ],
+  "author": "Alvin Berthelot",
+  "contributors": [
+    "Alex Soudant",
+    "Alvin Berthelot (http://alvin.berthelot.rocks)"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvinberthelot/read-me.io_module/issues"
+  },
+  "homepage": "https://github.com/alvinberthelot/read-me.io_module#readme",
+  "dependencies": {
+    "commander": "^2.13.0",
+    "inquirer": "^5.0.0"
+  }
+}
