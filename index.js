@@ -28,8 +28,11 @@ program
   .command('templates')
   .alias('t')
   .description('Get available templates')
-  .action(result => console.log('list of templates'));
-
+  .action(() => {
+    api.getTemplates().then(templates => {
+      templates.forEach(template => console.log(template));
+    }).catch(e => console.error('ERROR : ' + e));
+  });
 ////---------------------------------- ////
 
 
