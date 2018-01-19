@@ -4,7 +4,9 @@
   "description": "JavaScript module which create useful README files for your project",
   "main": "index.js",
   "preferGlobal": true,
-  "bin": "./readmegenerate.js",
+  "bin": {
+    "readmegenerate": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
