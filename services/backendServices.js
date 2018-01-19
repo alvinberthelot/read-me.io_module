@@ -1,23 +1,11 @@
-const https = require('https');
+const http = require('http');
 const config = require('./../config/config');
 
-// let options = {
-//   hostname: config.api.url,
-//   port: config.api.port,
-//   path: '/',
-//   method: 'GET',
-//   agent: false,
-//   family: 4
-// };
-//  port: config.api.port,
-//TODO : use options object
-
 function getApi(path) {
-  // options.path = path;
 
   return new Promise(function (resolve, reject) {
-
-    https.get(config.api.url + path, res => {
+    const url = config.api.url + (config.api.port ? ':' + config.api.port : '') + '/api' + path;
+    http.get(url, res => {
       res.setEncoding('utf8');
 
       let body = '';
@@ -35,6 +23,7 @@ function getApi(path) {
     });
 
   });
+
 }
 
 function getHealth() {
@@ -54,8 +43,8 @@ function getExtensions(refresh) {
     if (extensions && !refresh) {
       resolve(extensions);
     } else {
-      getApi('/posts/1').then(r => {
-        extensions = r.title.split(' ');
+      getApi('/extensions').then(r => {
+        extensions = r.extensions;
         resolve(extensions);
       }).catch(e => {
         reject(e);
@@ -66,8 +55,8 @@ function getExtensions(refresh) {
 
 function getTemplates() {
   return new Promise(function (resolve, reject) {
-    getApi('/posts/2').then(r => {
-      resolve(r.title.split(' '));
+    getApi('/templates').then(r => {
+      resolve(r.templates);
     }).catch(e => {
       reject(e);
     });

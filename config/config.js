@@ -1,10 +1,16 @@
 
 let config = {
-  api: {
-    url: 'https://jsonplaceholder.typicode.com',
-    key: 'n/a',
-    port: 80
+  test: {
+    api: {
+      url: 'http://localhost',
+      port: 3000
+    }
+  },
+  prod: {
+    api: {
+      url: 'http://read-me.io',
+    }
   }
 };
 
-module.exports = config;
+module.exports = config['test'];
