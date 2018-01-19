@@ -19,5 +19,15 @@ program
 
 ////---------------------------------- ////
 
+////------- Templates commands ------- ////
+
+program
+  .command('templates')
+  .alias('t')
+  .description('Get available templates')
+  .action(result => console.log('list of templates'));
+
+////---------------------------------- ////
+
 
 program.parse(process.argv);
