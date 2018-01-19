@@ -9,5 +9,6 @@
 const program = module.exports = require('commander');
 
 const extensions = require('./extensions');
+const templates = require('./templates');
 
 program.parse(process.argv);
