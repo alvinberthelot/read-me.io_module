@@ -38,16 +38,29 @@ function getApi(path) {
 }
 
 function getHealth() {
-
-}
-
-function getExtensions() {
   return new Promise(function (resolve, reject) {
-    getApi('/posts/1').then(r => {
-      resolve(r.title.split(' '));
+    getExtensions(true).then(() => {
+      resolve('ok');
     }).catch(e => {
       reject(e);
     });
+  });
+}
+
+let extensions = null;
+
+function getExtensions(refresh) {
+  return new Promise(function (resolve, reject) {
+    if (extensions && !refresh) {
+      resolve(extensions);
+    } else {
+      getApi('/posts/1').then(r => {
+        extensions = r.title.split(' ');
+        resolve(extensions);
+      }).catch(e => {
+        reject(e);
+      });
+    }
   });
 }
 
