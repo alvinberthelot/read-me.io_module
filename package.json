@@ -34,6 +34,6 @@
     "inquirer": "5.0.0"
   },
   "devDependencies": {
-    "eslint": "^4.15.0"
+    "eslint": "4.15.0"
   }
 }
