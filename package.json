@@ -4,7 +4,9 @@
   "description": "JavaScript module which create useful README files for your project",
   "main": "index.js",
   "preferGlobal": true,
-  "bin": "./readmegenerate.js",
+  "bin": {
+    "readmegenerate": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,5 +32,8 @@
   "dependencies": {
     "commander": "2.13.0",
     "inquirer": "5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "4.15.0"
   }
 }
