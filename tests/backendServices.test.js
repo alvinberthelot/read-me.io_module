@@ -7,7 +7,7 @@ describe('backendServices', function() {
       return backendServices.getTemplates().then((res)=>{
         expect(res).to.be.an('array');
         expect(res).to.not.be.empty;
-      }).catch((err) => {
+      }).catch(() => {
         expect.fail(0, 1, 'Promise Error');
       });
     });
@@ -20,7 +20,7 @@ describe('backendServices', function() {
       return backendServices.getExtensions().then((res)=>{
         expect(res).to.be.an('array');
         expect(res).to.not.be.empty;
-      }).catch((err) => {
+      }).catch(() => {
         expect.fail(0, 1, 'Promise Error');
       });
     });
