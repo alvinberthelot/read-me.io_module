@@ -18,6 +18,6 @@ program
   .action(result => console.log('list of extensions'));
 
 ////---------------------------------- ////
-
+console.log('');
 
 program.parse(process.argv);
