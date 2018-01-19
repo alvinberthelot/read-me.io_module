@@ -1,8 +1,4 @@
 node_modules/
 .vscode/
-<<<<<<< HEAD
-=======
-./package-lock.json
->>>>>>> f959af7694ec8d2e3461ab10cd4118d1cce56497
 .DS_Store
 .eslintrc.js
