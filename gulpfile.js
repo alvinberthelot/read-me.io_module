@@ -4,9 +4,9 @@ const rename = require('gulp-rename');
 
 const localConfig = {
     src: './*.js',
-    services: './services/*',
+    services: './app/services/*',
     dest: './dist',
-    destServices: 'dist/services',
+    destServices: 'dist/app/services',
     config: './config/config.prod.js'
 };
 
