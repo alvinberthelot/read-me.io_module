@@ -10,6 +10,8 @@ const program = require('commander');
 const fs = require('fs');
 
 const api = require('./app/services/apiService');
+const readme = require('./app/services/readmeService');
+
 ////------- Extensions commands ------- ////
 
 program
@@ -50,9 +52,10 @@ program
       api.generate(options.ext, options.template).then(res => {
         if (res.file && !res.err) {
           console.log(res.file);
-          fs.writeFile('README.' + res.ext, res.file, (err) => {
-            if (err) throw err;
-            console.log('The file has been writed!');
+          readme.write(res.ext, res.file).then(res => {
+            console.log(res);
+          }).catch(err => {
+            console.error(err);
           });
         } else {
           console.error('ERROR : ' + res.err || 'unable to recover the file');
