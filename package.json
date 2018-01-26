@@ -34,7 +34,8 @@
   "homepage": "https://github.com/alvinberthelot/read-me.io_module#readme",
   "dependencies": {
     "commander": "2.13.0",
-    "inquirer": "5.0.0"
+    "inquirer": "5.0.0",
+    "prompt": "1.0.0"
   },
   "devDependencies": {
     "chai": "4.1.2",
