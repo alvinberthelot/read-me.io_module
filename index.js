@@ -7,7 +7,6 @@
  * their arguments
  */
 const program = require('commander');
-const fs = require('fs');
 
 const api = require('./app/services/apiService');
 const readme = require('./app/services/readmeService');
