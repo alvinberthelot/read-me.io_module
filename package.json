@@ -35,14 +35,15 @@
   "homepage": "https://github.com/alvinberthelot/read-me.io_module#readme",
   "dependencies": {
     "commander": "2.13.0",
-    "gulp-rename": "^1.2.2",
-    "inquirer": "5.0.0"
+    "gulp-rename": "1.2.2",
+    "inquirer": "5.0.0",
+    "prompt": "1.0.0"
   },
   "devDependencies": {
     "chai": "4.1.2",
     "eslint": "4.15.0",
-    "gulp": "^3.9.1",
+    "gulp": "3.9.1",
     "mocha": "5.0.0",
-    "yargs": "^11.0.0"
+    "yargs": "11.0.0"
   }
 }
