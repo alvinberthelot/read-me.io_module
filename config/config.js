@@ -8,7 +8,7 @@ let config = {
   },
   prod: {
     api: {
-      url: 'http://read-me.io',
+      url: 'http://www.read-me.io',
     }
   }
 };

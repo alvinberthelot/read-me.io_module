@@ -1,25 +1,25 @@
 const expect = require('chai').expect;
-const backendServices = require('./../services/backendServices');
+const api = require('./../app/services/apiService');
 
-describe('backendServices', function () {
+describe('apiService', function () {
   describe('getTemplates', function () {
     it('should return an array of string and not be empty', function () {
-      return backendServices.getTemplates().then((res) => {
+      return api.getTemplates().then((res) => {
         expect(res).to.be.an('array');
         expect(res).to.not.be.empty;
+        expect(res[0]).to.be.an('string');
       }).catch(() => {
         expect.fail(0, 1, 'Promise Error');
       });
     });
   });
-});
 
-describe('backendServices', function () {
-  describe('getTemplates', function () {
+  describe('getExtensions', function () {
     it('should return an array of string and not be empty', function () {
-      return backendServices.getExtensions().then((res) => {
+      return api.getExtensions().then((res) => {
         expect(res).to.be.an('array');
         expect(res).to.not.be.empty;
+        expect(res[0]).to.be.an('string');
       }).catch(() => {
         expect.fail(0, 1, 'Promise Error');
       });
