@@ -8,7 +8,9 @@
     "readmegenerate": "./index.js"
   },
   "scripts": {
-    "test": "mocha tests/*"
+    "test": "mocha tests/*",
+    "lint": "eslint app/**/*.js",
+    "link": "npm link"
   },
   "repository": {
     "type": "git",
