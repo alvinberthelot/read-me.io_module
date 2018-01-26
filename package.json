@@ -9,7 +9,9 @@
   },
   "scripts": {
     "test": "mocha tests/*",
-    "build:prod": "gulp build"
+    "build:prod": "gulp build",
+    "lint": "eslint app/**/*.js index.js",
+    "link": "npm link"
   },
   "repository": {
     "type": "git",
