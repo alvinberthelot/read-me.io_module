@@ -1,10 +1,17 @@
 const http = require('http');
 const config = require('./../../config/config');
 
-function getApi(path) {
+function getApi(path, params) {
 
   return new Promise(function (resolve, reject) {
-    const url = config.api.url + (config.api.port ? ':' + config.api.port : '') + '/api' + path;
+    let url = config.api.url + (config.api.port ? ':' + config.api.port : '') + '/api' + path;
+    if (params && typeof params === 'object') {
+      url += '?';
+      Object.keys(params).forEach(param => {
+        url += param + '=' + params[param] + '&';
+      });
+      url = url.slice(0, -1);
+    }
     http.get(url, res => {
       res.setEncoding('utf8');
 
@@ -64,13 +71,13 @@ function getTemplates() {
 }
 
 
-// function generate(ext, template) {
-
-// }
+function generate(ext, template) {
+  return getApi('/generate', { template: template, ext: ext });
+}
 
 module.exports = {
   getExtensions: getExtensions,
   getTemplates: getTemplates,
-  //generate: generate,
+  generate: generate,
   getHealth: getHealth
 };
