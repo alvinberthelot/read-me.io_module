@@ -35,5 +35,24 @@ program
   });
 ////---------------------------------- ////
 
+////------- Generate commands ------- ////
+
+program
+  .command('file')
+  .alias('f')
+  .description('Get ReadMe')
+  .option(' --template [template]', 'Which setup the template you want')
+  .option(' --ext [ext]', 'Which setup the template extension')
+  .action((options) => {
+    if (options && options.ext && options.template) {
+      api.generate(options.ext, options.template).then(file => {
+        console.log(file);
+      }).catch(e => console.error('ERROR : ' + e));
+    } else {
+      console.error('ERROR : options --template and --ext must be defined');
+    }
+  });
+////---------------------------------- ////
+
 
 program.parse(process.argv);
