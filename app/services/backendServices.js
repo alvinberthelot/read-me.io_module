@@ -1,5 +1,5 @@
 const http = require('http');
-const config = require('./../config/config');
+const config = require('./../../config/config');
 
 function getApi(path) {
 

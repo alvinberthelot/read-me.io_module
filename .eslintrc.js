@@ -9,6 +9,7 @@ module.exports = {
     "sourceType": "module"
   },
   "rules": {
+    "no-console": 0,
     "indent": [
       "error",
       2
@@ -24,6 +25,7 @@ module.exports = {
     "semi": [
       "error",
       "always"
-    ]
+    ],
+    "no-console": 0
   }
 };

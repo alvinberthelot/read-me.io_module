@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const backendServices = require('./../services/backendServices');
+const backendServices = require('./../app/services/backendServices');
 
 describe('backendServices', function () {
   describe('getTemplates', function () {

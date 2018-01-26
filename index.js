@@ -7,7 +7,7 @@
  * their arguments
  */
 const program = require('commander');
-const api = require('./services/backendServices');
+const api = require('./app/services/backendServices');
 ////------- Extensions commands ------- ////
 
 program
