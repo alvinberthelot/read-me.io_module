@@ -7,9 +7,10 @@
  * their arguments
  */
 const program = require('commander');
-const fs = require('fs');
 
 const api = require('./app/services/apiService');
+const readme = require('./app/services/readmeService');
+
 ////------- Extensions commands ------- ////
 
 program
@@ -42,25 +43,32 @@ program
 program
   .command('file')
   .alias('f')
-  .description('Get ReadMe, --template and --ext options are required')
+  .description('Get ReadMe, use --template and --ext options')
   .option(' --template [template]', 'Which setup the template you want')
   .option(' --ext [ext]', 'Which setup the template extension')
   .action((options) => {
-    if (options && options.ext && options.template) {
-      api.generate(options.ext, options.template).then(res => {
-        if (res.file && !res.err) {
-          console.log(res.file);
-          fs.writeFile('README.' + res.ext, res.file, (err) => {
-            if (err) throw err;
-            console.log('The file has been writed!');
-          });
-        } else {
-          console.error('ERROR : ' + res.err || 'unable to recover the file');
+    // if (options && options.ext && options.template) {
+    api.generate(options.ext, options.template).then(res => {
+      if (res.file && !res.err) {
+        let promiseArrayReadme = [];
+
+        if (res.var_project) {
+          promiseArrayReadme.push(readme.fill(res.var_project, res.file));
         }
-      }).catch(e => console.error('ERROR : ' + e));
-    } else {
-      console.error('ERROR : --template and --ext options must be defined');
-    }
+
+        Promise.all(promiseArrayReadme).then(resultFill => {
+          readme.write(res.ext, resultFill[0] || res.file).then(res => {
+            console.log(res);
+          }).catch(err => console.error(err));
+        }).catch(err => console.error(err));
+
+      } else {
+        console.error('ERROR : ' + res.err || 'unable to recover the file');
+      }
+    }).catch(e => console.error('ERROR : ' + e));
+    // } else {
+    //   console.error('ERROR : --template and --ext options must be defined');
+    // }
   });
 ////---------------------------------- ////
 

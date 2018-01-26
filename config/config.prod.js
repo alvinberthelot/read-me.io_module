@@ -1,7 +1,6 @@
 let config = {
   api: {
-    url: 'http://localhost',
-    port: 3000
+    url: 'http://www.read-me.io',
   }
 };
 
