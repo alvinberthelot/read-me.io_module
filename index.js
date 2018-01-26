@@ -7,6 +7,8 @@
  * their arguments
  */
 const program = require('commander');
+const fs = require('fs');
+
 const api = require('./app/services/apiService');
 ////------- Extensions commands ------- ////
 
@@ -45,8 +47,12 @@ program
   .option(' --ext [ext]', 'Which setup the template extension')
   .action((options) => {
     if (options && options.ext && options.template) {
-      api.generate(options.ext, options.template).then(file => {
-        console.log(file);
+      api.generate(options.ext, options.template).then(res => {
+        console.log(res.file);
+        fs.writeFile('README.' + res.ext, res.file, (err) => {
+          if (err) throw err;
+          console.log('The file has been writed!');
+        });
       }).catch(e => console.error('ERROR : ' + e));
     } else {
       console.error('ERROR : options --template and --ext must be defined');
